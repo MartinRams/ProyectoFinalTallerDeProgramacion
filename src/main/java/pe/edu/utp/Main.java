@@ -2,16 +2,16 @@ package pe.edu.utp;
 
 import java.util.Objects;
 import java.util.Scanner;
-import pe.edu.utp.auth.UserValidator;
-import pe.edu.utp.logging.AuditorioLogger;
+import pe.edu.utp.auth.ValidarUsuario;
+import pe.edu.utp.logging.IngresoAuditorio;
 import pe.edu.utp.ui.MenuPrincipal;
 
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        UserValidator userValidator = new UserValidator();
+        ValidarUsuario validarUsuario = new ValidarUsuario();
         MenuPrincipal menuPrincipal = new MenuPrincipal();
-        String usuario = userValidator.pedirUsuario(entrada);
+        String usuario = validarUsuario.pedirUsuario(entrada);
 
         try {
             if (!Objects.equals(usuario, "")) {
@@ -22,9 +22,9 @@ public class Main {
             }
 
         } catch (Exception e) {
-            String tipoError = "Error en ejecución.";
+            String tipoError = e.getClass().getName();
             String mensajeError = e.getMessage();
-            AuditorioLogger.logError(usuario, tipoError, mensajeError);
+            IngresoAuditorio.logError(usuario, tipoError, mensajeError);
 
         } finally {
             entrada.close();

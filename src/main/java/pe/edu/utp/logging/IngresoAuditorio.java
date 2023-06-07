@@ -6,9 +6,9 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class AuditorioLogger {
+public class IngresoAuditorio {
 
-    private static final Logger logger = Logger.getLogger("AuditorioLog");
+    private static final Logger logger = Logger.getLogger(IngresoAuditorio.class.getName());
     private static Date fechaActual = new Date();
     private static String fecha = fechaActual.toString();
 

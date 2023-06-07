@@ -5,28 +5,28 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.Scanner;
 
-public class UserValidator {
+public class ValidarUsuario {
     private final Map<String, String> USUARIOS;
     private final String RUTA_USUARIOS = System.getProperty("user.dir") + "/src/main/resources/config/usuarios.txt";
 
-    public UserValidator() {
+    public ValidarUsuario() {
         USUARIOS = new java.util.HashMap<>();
         cargarUsuarios();
     }
 
     private void cargarUsuarios() {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(RUTA_USUARIOS));
+            BufferedReader lector = new BufferedReader(new FileReader(RUTA_USUARIOS));
             String linea;
-            while ((linea = reader.readLine()) != null) {
-                String[] usuario = linea.split(":");
+            while ((linea = lector.readLine()) != null) {
+                String[] usuario = linea.split("=");
                 if (usuario.length == 2) {
                     String nombre = usuario[0].trim();
                     String contrasena = usuario[1].trim();
                     USUARIOS.put(nombre, contrasena);
                 }
             }
-            reader.close();
+            lector.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,22 +41,22 @@ public class UserValidator {
     }
 
     public String pedirUsuario(Scanner entrada) {
-        String usuario, contrasena;
+        String usuarioIngresado, contrasenaIngresado;
         int intentos = 3;
 
         do {
             System.out.print("Usuario: ");
-            usuario = entrada.nextLine().toLowerCase();
+            usuarioIngresado = entrada.nextLine().toLowerCase();
 
             System.out.print("Contraseña: ");
-            contrasena = entrada.nextLine();
+            contrasenaIngresado = entrada.nextLine();
 
-            if (validarUsuario(usuario, contrasena)) {
+            if (validarUsuario(usuarioIngresado, contrasenaIngresado)) {
                 break;
 
             } else {
                 intentos--;
-                usuario = "";
+                usuarioIngresado = "";
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
                 System.out.println("Usuario o contraseña incorrectos.");
@@ -65,10 +65,7 @@ public class UserValidator {
             }
         } while (intentos != 0);
 
-        // entrada.close();
-
-        return usuario;
-
+        return usuarioIngresado;
 
     }
 }
