@@ -8,26 +8,34 @@ import pe.edu.utp.ui.MenuPrincipal;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        ValidarUsuario validarUsuario = new ValidarUsuario();
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
-        String usuario = validarUsuario.pedirUsuario(entrada);
+        // Declaramos variables.
+        String usuario = "";
 
-        try {
+        // Iniciamos programa
+        try (Scanner entrada = new Scanner(System.in)) {
+            // Pedimos el usuario.
+            usuario = new ValidarUsuario().pedirUsuario(entrada);
+
+            // Despliegue del menú principal al inciar sesión correctamente.
             if (!Objects.equals(usuario, "")) {
-                menuPrincipal.despliegueMenuPrincipal(entrada);
+                MenuPrincipal.despliegueMenuPrincipal(entrada);
 
             } else {
-                System.out.println("Usuario no válido.");
+                System.out.println("Usuario inválido.");
+
             }
 
         } catch (Exception e) {
+            if (Objects.equals(usuario, "")) {
+                usuario = "Desconocido";
+            }
+
+            // Registramos error
             String tipoError = e.getClass().getName();
             String mensajeError = e.getMessage();
             IngresoAuditorio.logError(usuario, tipoError, mensajeError);
 
         } finally {
-            entrada.close();
             System.out.print("\n ¡Hasta pronto!\n");
 
         }

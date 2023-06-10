@@ -3,14 +3,17 @@ package pe.edu.utp.ui;
 import java.util.Scanner;
 
 public class MenuPrincipal {
-    public void despliegueMenuPrincipal(Scanner entrada) {
-        byte opcion;
+    public static void despliegueMenuPrincipal(Scanner entrada) {
+        // Declaramos variables
+        String error = "";
+        int opcion;
 
+        // Desplegamos el menú principal
         do {
             System.out.print("\033[H\033[2J");
             System.out.flush();
 
-            System.out.print("""
+            System.out.printf("""
                     --------------------------------------------------------
                     MENU PRINCIPAL
                     --------------------------------------------------------
@@ -20,15 +23,42 @@ public class MenuPrincipal {
                     4. Dinero girado a cada departamento dado un sector y un mes.
                     0. FIN DEL PROGRAMA
                     --------------------------------------------------------
-                    Ingrese opción [1 - 4]:""");
+                    %sIngrese opción [1 - 4]:""", error);
 
             System.out.print(" ");
 
-            opcion = (byte) entrada.nextInt();
+            opcion = entrada.nextInt();
             entrada.nextLine();
 
-        } while (opcion != 0);
+            switch (opcion) {
+                case 1:
+                    error = "";
+                    new Modulo01().despliegueModulo01(entrada);
+                    break;
 
-        entrada.close();
+                case 2:
+                    error = "";
+                    new Modulo02().despliegueModulo02(entrada);
+                    break;
+
+                case 3:
+                    error = "";
+                    new Modulo03().despliegueModulo03(entrada);
+                    break;
+
+                case 4:
+                    error = "";
+                    new Modulo04().despliegueModulo04(entrada);
+                    break;
+
+                case 0:
+                    break;
+
+                default:
+                    error = "Error: La opción es inválida.\n";
+                    break;
+            }
+
+        } while (opcion != 0);
     }
 }

@@ -1,19 +1,23 @@
 package pe.edu.utp.auth;
 
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.FileReader;
 import java.util.Map;
 import java.util.Scanner;
 
 public class ValidarUsuario {
+    // Declaramos variables
     private final Map<String, String> USUARIOS;
     private final String RUTA_USUARIOS = System.getProperty("user.dir") + "/src/main/resources/config/usuarios.txt";
 
+    // Constructor
     public ValidarUsuario() {
         USUARIOS = new java.util.HashMap<>();
         cargarUsuarios();
     }
 
+    // Leeremos el archivo que contiene los usuarios
     private void cargarUsuarios() {
         try {
             BufferedReader lector = new BufferedReader(new FileReader(RUTA_USUARIOS));
@@ -29,10 +33,11 @@ public class ValidarUsuario {
             lector.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error al cargar usuarios.");
         }
     }
 
+    // Validamos el usuario
     public boolean validarUsuario(String nombre, String contrasena) {
         if (USUARIOS.containsKey(nombre)) {
             return USUARIOS.get(nombre).equals(contrasena);
@@ -40,18 +45,19 @@ public class ValidarUsuario {
         return false;
     }
 
+    // Pedimos el usuario
     public String pedirUsuario(Scanner entrada) {
-        String usuarioIngresado, contrasenaIngresado;
+        Console consola = System.console();
+        String usuarioIngresado, contrasenaIngresada;
         int intentos = 3;
 
         do {
             System.out.print("Usuario: ");
             usuarioIngresado = entrada.nextLine().toLowerCase();
 
-            System.out.print("Contraseña: ");
-            contrasenaIngresado = entrada.nextLine();
+            contrasenaIngresada = new String(consola.readPassword("Contraseña: "));
 
-            if (validarUsuario(usuarioIngresado, contrasenaIngresado)) {
+            if (validarUsuario(usuarioIngresado, contrasenaIngresada)) {
                 break;
 
             } else {
@@ -66,6 +72,5 @@ public class ValidarUsuario {
         } while (intentos != 0);
 
         return usuarioIngresado;
-
     }
 }
