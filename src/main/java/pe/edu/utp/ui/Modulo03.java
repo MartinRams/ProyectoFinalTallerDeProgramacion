@@ -3,8 +3,6 @@ package pe.edu.utp.ui;
 import java.util.List;
 import java.util.Scanner;
 
-import pe.edu.utp.filters.FiltroModulo04;
-
 public class Modulo03 {
     public static void despliegueModulo03(Scanner entrada, List<String[]> datos) {
         // Declaramos variables
