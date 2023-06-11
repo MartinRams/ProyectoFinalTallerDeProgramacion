@@ -9,8 +9,8 @@ import java.util.logging.SimpleFormatter;
 public class IngresoAuditorio {
     // Declaramos variables
     private static final Logger logger = Logger.getLogger(IngresoAuditorio.class.getName());
-    private static Date fechaActual = new Date();
-    private static String fecha = fechaActual.toString();
+    private static final Date FECHA_ACTUAL = new Date();
+    private static final String FECHA = FECHA_ACTUAL.toString();
 
     // Atrapamos excepciones al escribir en auditorio.log
     static {
@@ -27,6 +27,6 @@ public class IngresoAuditorio {
 
     // Logeamos el ingreso al auditorio
     public static void logError(String usuario, String tipoError, String mensajeError) {
-        logger.warning(String.format("Fecha: %s \nUsuario: %s \nTipo de error: %s \nMensaje de error: %s\n", fecha, usuario, tipoError, mensajeError));
+        logger.warning(String.format("Fecha: %s \nUsuario: %s \nTipo de error: %s \nMensaje de error: %s\n", FECHA, usuario, tipoError, mensajeError));
     }
 }

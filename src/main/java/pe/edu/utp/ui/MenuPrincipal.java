@@ -1,12 +1,17 @@
 package pe.edu.utp.ui;
 
+import java.util.List;
 import java.util.Scanner;
+
+import pe.edu.utp.csv.LectorCsv;
 
 public class MenuPrincipal {
     public static void despliegueMenuPrincipal(Scanner entrada) {
         // Declaramos variables
         String error = "";
         int opcion;
+
+        List<String[]> datos = LectorCsv.obtenerDatos();
 
         // Desplegamos el menú principal
         do {
@@ -33,22 +38,22 @@ public class MenuPrincipal {
             switch (opcion) {
                 case 1:
                     error = "";
-                    new Modulo01().despliegueModulo01(entrada);
+                    Modulo01.despliegueModulo01(entrada, datos);
                     break;
 
                 case 2:
                     error = "";
-                    new Modulo02().despliegueModulo02(entrada);
+                    Modulo02.despliegueModulo02(entrada, datos);
                     break;
 
                 case 3:
                     error = "";
-                    new Modulo03().despliegueModulo03(entrada);
+                    Modulo03.despliegueModulo03(entrada, datos);
                     break;
 
                 case 4:
                     error = "";
-                    new Modulo04().despliegueModulo04(entrada);
+                    Modulo04.despliegueModulo04(entrada, datos);
                     break;
 
                 case 0:

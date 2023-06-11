@@ -36,7 +36,7 @@ public class Main {
             IngresoAuditorio.logError(usuario, tipoError, mensajeError);
 
         } finally {
-            System.out.print("\n ¡Hasta pronto!\n");
+            System.out.print("\n¡Hasta pronto!\n");
 
         }
     }

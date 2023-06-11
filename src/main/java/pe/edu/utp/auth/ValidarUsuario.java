@@ -49,13 +49,19 @@ public class ValidarUsuario {
     public String pedirUsuario(Scanner entrada) {
         Console consola = System.console();
         String usuarioIngresado, contrasenaIngresada;
-        int intentos = 3;
+        int intentos = 4;
 
         do {
             System.out.print("Usuario: ");
             usuarioIngresado = entrada.nextLine().toLowerCase();
 
-            contrasenaIngresada = new String(consola.readPassword("Contraseña: "));
+            if (consola == null) {
+                System.out.print("Contraseña: ");
+                contrasenaIngresada = entrada.nextLine();
+            } else {
+                contrasenaIngresada = new String(consola.readPassword("Contraseña: "));
+            }
+
 
             if (validarUsuario(usuarioIngresado, contrasenaIngresada)) {
                 break;
