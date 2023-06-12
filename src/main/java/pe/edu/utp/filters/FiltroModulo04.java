@@ -18,6 +18,7 @@ public class FiltroModulo04 {
         StringBuilder reporte = new StringBuilder();
         boolean haConcluido = false, haSeleccionado = false;
 
+        System.out.println("\n");
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
@@ -50,6 +51,7 @@ public class FiltroModulo04 {
             entrada.nextLine();
 
             if (opcion < 0 || opcion > SECTORES.size()) {
+                System.out.println("\n");
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
 
@@ -64,6 +66,7 @@ public class FiltroModulo04 {
 
                 // Seleccionar mes
                 do {
+                    System.out.println("\n");
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
                 

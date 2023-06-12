@@ -15,6 +15,8 @@ public class MenuPrincipal {
 
         // Desplegamos el menú principal
         do {
+            // Limpiamos la consola (en caso de no ser ejecutado en un IDE)
+            System.out.println("\n");
             System.out.print("\033[H\033[2J");
             System.out.flush();
 

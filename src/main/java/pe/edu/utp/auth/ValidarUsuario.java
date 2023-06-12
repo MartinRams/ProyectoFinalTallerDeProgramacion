@@ -69,6 +69,7 @@ public class ValidarUsuario {
             } else {
                 intentos--;
                 usuarioIngresado = "";
+                System.out.println("\n");
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
                 System.out.println("Usuario o contraseña incorrectos.");

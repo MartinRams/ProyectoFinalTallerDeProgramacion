@@ -10,6 +10,8 @@ public class Modulo03 {
         int opcion;
 
         do {
+            // Limpiamos la consola (en caso de no ser ejecutado en un IDE)
+            System.out.println("\n");
             System.out.print("\033[H\033[2J");
             System.out.flush();
     
@@ -26,6 +28,7 @@ public class Modulo03 {
 
                     // Se imprime el reporte
                     if (opcion == 1) {
+                        System.out.println("\n");
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
 
