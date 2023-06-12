@@ -23,13 +23,13 @@ public class FiltroModulo04 {
 
         // Filtramos los sectores y departamentos
         for (String[] dato : datos) {
-            if (!SECTORES.contains(dato[2].toString())) {
-                SECTORES.add(dato[2].toString());
+            if (!SECTORES.contains(dato[2])) {
+                SECTORES.add(dato[2]);
             }
 
-            if (!DEPARTAMENTOS.contains(dato[3].toString())) {
-                System.out.println(dato[3].toString());
-                DEPARTAMENTOS.add(dato[3].toString());
+            if (!DEPARTAMENTOS.contains(dato[3])) {
+                System.out.println(dato[3]);
+                DEPARTAMENTOS.add(dato[3]);
             }
         }
         Collections.sort(DEPARTAMENTOS);
@@ -111,11 +111,20 @@ public class FiltroModulo04 {
 
                         for (int i = 0; i < DEPARTAMENTOS.size(); i++) {
                             if (subTotales[i] != 0) {
+                                // En caso de que el nombre del departamento sea mayor a 12 caracteres
+                                if (DEPARTAMENTOS.get(i).length() >= 12) {
+                                    departamento = DEPARTAMENTOS.get(i).substring(0, 12);
+
+                                } else {
+                                    departamento = DEPARTAMENTOS.get(i);
+                                    
+                                }
+
                                 porcentaje = (subTotales[i] * 100) / total;
                                 porcentajeTotal += porcentaje;
                                 reporte.append(String.format("""
                                         %-12s %10.2f %9.2f%%
-                                        """, DEPARTAMENTOS.get(i), subTotales[i], porcentaje));
+                                        """, departamento, subTotales[i], porcentaje));
                             }
                             
                         }

@@ -3,6 +3,7 @@ package pe.edu.utp.ui;
 import java.util.List;
 import java.util.Scanner;
 
+import pe.edu.utp.export.ExportadorDatos;
 import pe.edu.utp.filters.FiltroModulo04;
 
 
@@ -40,7 +41,7 @@ public class Modulo04 {
                         }
 
                     } else {  // Se exporta el informe a un archivo plano
-
+                        ExportadorDatos.exportarReporte("Modulo04", reporte);
                     }
                 }
                 case 0 -> error = "";

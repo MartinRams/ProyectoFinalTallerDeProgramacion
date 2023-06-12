@@ -1,0 +1,20 @@
+DEPARTAMENTO      TOTAL       PORC
+==================================
+AMAZONAS        2500.00      1.57%
+ANCASH          1272.00      0.80%
+APURIMAC        2050.00      1.29%
+AREQUIPA         919.60      0.58%
+AYACUCHO        6240.00      3.91%
+CAJAMARCA      10535.00      6.60%
+CUSCO           5890.00      3.69%
+HUANCAVELICA    9104.00      5.71%
+HUANUCO         1900.00      1.19%
+ICA             5419.04      3.40%
+JUNIN           3540.00      2.22%
+LAMBAYEQUE      6996.00      4.39%
+LIMA            7594.50      4.76%
+PASCO           2600.00      1.63%
+PUNO           10460.00      6.56%
+SAN MARTIN      2740.00      1.72%
+==================================
+TOTAL        159520.28    150.00%
