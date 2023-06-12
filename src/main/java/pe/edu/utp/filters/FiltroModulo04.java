@@ -29,7 +29,6 @@ public class FiltroModulo04 {
             }
 
             if (!DEPARTAMENTOS.contains(dato[3])) {
-                System.out.println(dato[3]);
                 DEPARTAMENTOS.add(dato[3]);
             }
         }
