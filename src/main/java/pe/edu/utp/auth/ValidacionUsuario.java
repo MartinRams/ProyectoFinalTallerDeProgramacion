@@ -6,13 +6,13 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ValidarUsuario {
+public class ValidacionUsuario {
     // Declaramos variables
     private final Map<String, String> USUARIOS;
     private final String RUTA_USUARIOS = System.getProperty("user.dir") + "/src/main/resources/config/usuarios.txt";
 
     // Constructor
-    public ValidarUsuario() {
+    public ValidacionUsuario() {
         USUARIOS = new java.util.HashMap<>();
         cargarUsuarios();
     }

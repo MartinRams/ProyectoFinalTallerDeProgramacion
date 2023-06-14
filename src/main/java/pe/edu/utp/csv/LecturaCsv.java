@@ -7,7 +7,7 @@ import java.util.List;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
-public class LectorCsv {
+public class LecturaCsv {
     private static final String RUTA_CSV = System.getProperty("user.dir") + "\\src\\main\\resources\\Gasto Covid19 2020 (DATASET).csv";
     
     public static List<String[]> obtenerDatos() {

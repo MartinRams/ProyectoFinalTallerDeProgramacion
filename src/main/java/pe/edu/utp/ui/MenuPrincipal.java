@@ -3,7 +3,7 @@ package pe.edu.utp.ui;
 import java.util.List;
 import java.util.Scanner;
 
-import pe.edu.utp.csv.LectorCsv;
+import pe.edu.utp.csv.LecturaCsv;
 
 public class MenuPrincipal {
     public static void despliegueMenuPrincipal(Scanner entrada) {
@@ -11,7 +11,7 @@ public class MenuPrincipal {
         String error = "";
         int opcion;
 
-        List<String[]> datos = LectorCsv.obtenerDatos();
+        List<String[]> datos = LecturaCsv.obtenerDatos();
 
         // Desplegamos el menú principal
         do {

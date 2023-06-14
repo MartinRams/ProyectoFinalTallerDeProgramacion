@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ExportadorDatos {
+public class ExportacionDatos {
     private static final String RUTA_A_EXPORTAR = System.getProperty("user.dir") + "/exports";
     private static final SimpleDateFormat FORMATO_FECHA = new SimpleDateFormat("yyyyMMdd_HHmmss");
     private static final String FECHA = FORMATO_FECHA.format(new Date());
