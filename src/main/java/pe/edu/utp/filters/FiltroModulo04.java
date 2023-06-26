@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+import pe.edu.utp.utils.LimpiezaConsola;
+
 public class FiltroModulo04 {
     private static final List<String> SECTORES = new ArrayList<>();
     private static final List<String> DEPARTAMENTOS = new ArrayList<>();
@@ -18,9 +20,7 @@ public class FiltroModulo04 {
         StringBuilder reporte = new StringBuilder();
         boolean haConcluido = false, haSeleccionado = false;
 
-        System.out.println("\n");
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        LimpiezaConsola.limpiarConsola();
 
         // Filtramos los sectores y departamentos
         for (String[] dato : datos) {
@@ -50,9 +50,7 @@ public class FiltroModulo04 {
             entrada.nextLine();
 
             if (opcion < 0 || opcion > SECTORES.size()) {
-                System.out.println("\n");
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
+                LimpiezaConsola.limpiarConsola();
 
                 System.out.println("Opción inválida.");
             
@@ -65,9 +63,7 @@ public class FiltroModulo04 {
 
                 // Seleccionar mes
                 do {
-                    System.out.println("\n");
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
+                    LimpiezaConsola.limpiarConsola();
                 
                     // Mostrar los meses
                     System.out.println(" Sector seleccionado: " + sector);

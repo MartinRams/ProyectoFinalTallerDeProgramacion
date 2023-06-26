@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import pe.edu.utp.export.ExportacionDatos;
 import pe.edu.utp.filters.FiltroModulo04;
-
+import pe.edu.utp.utils.LimpiezaConsola;
 
 public class Modulo04 {
     public static void despliegueModulo04(Scanner entrada, List<String[]> datos) {
@@ -15,14 +15,11 @@ public class Modulo04 {
 
         do {
             // Limpiamos la consola (en caso de no ser ejecutado en un IDE)
-            System.out.println("\n");
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-            
+            LimpiezaConsola.limpiarConsola();
+
             // Se muestran las opciones
             OpcionesModulos.mostrarOpciones(
-                "MÓDULO 04 - DINERO GIRADO A CADA DEPARTAMENTO DADO UN SECTOR Y UN MES"
-                , error);
+                    "MÓDULO 04 - DINERO GIRADO A CADA DEPARTAMENTO DADO UN SECTOR Y UN MES", error);
             opcion = entrada.nextByte();
             entrada.nextLine();
 
@@ -42,7 +39,7 @@ public class Modulo04 {
                             entrada.nextLine();
                         }
 
-                    } else {  // Se exporta el informe a un archivo plano
+                    } else { // Se exporta el informe a un archivo plano
                         ExportacionDatos.exportarReporte("Modulo04", reporte);
                     }
                 }

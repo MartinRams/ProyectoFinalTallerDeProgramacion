@@ -3,6 +3,8 @@ package pe.edu.utp.ui;
 import java.util.List;
 import java.util.Scanner;
 
+import pe.edu.utp.utils.LimpiezaConsola;
+
 public class Modulo03 {
     public static void despliegueModulo03(Scanner entrada, List<String[]> datos) {
         // Declaramos variables
@@ -11,13 +13,10 @@ public class Modulo03 {
 
         do {
             // Limpiamos la consola (en caso de no ser ejecutado en un IDE)
-            System.out.println("\n");
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-    
+            LimpiezaConsola.limpiarConsola();
+
             OpcionesModulos.mostrarOpciones(
-                "MÓDULO 03 - DINERO GIRADO POR SECTOR, DADO UNA LISTA DE MESES Y SECTORES"
-                , error);
+                    "MÓDULO 03 - DINERO GIRADO POR SECTOR, DADO UNA LISTA DE MESES Y SECTORES", error);
 
             opcion = entrada.nextByte();
             entrada.nextLine();
@@ -34,11 +33,11 @@ public class Modulo03 {
 
                         // System.out.println(reporte);
                         // if (!reporte.equals("")) {
-                            // System.out.print("Presione cualquier ENTER para continuar... ");
-                            // entrada.nextLine();
+                        // System.out.print("Presione cualquier ENTER para continuar... ");
+                        // entrada.nextLine();
                         // }
 
-                    } else {  // Se exporta el informe a un archivo plano
+                    } else { // Se exporta el informe a un archivo plano
 
                     }
                 }
