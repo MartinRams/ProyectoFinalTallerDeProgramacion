@@ -53,7 +53,7 @@ public class FiltroModulo04 {
                 LimpiezaConsola.limpiarConsola();
 
                 System.out.println("Opción inválida.");
-            
+
 
             } else if (opcion == 0) {
                 haConcluido = true;

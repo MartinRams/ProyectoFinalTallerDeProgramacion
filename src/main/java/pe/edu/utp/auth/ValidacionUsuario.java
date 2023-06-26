@@ -60,8 +60,10 @@ public class ValidacionUsuario {
             if (consola == null) {
                 System.out.print("Contraseña: ");
                 contrasenaIngresada = entrada.nextLine();
+
             } else {
                 contrasenaIngresada = new String(consola.readPassword("Contraseña: "));
+                
             }
 
             if (validarUsuario(usuarioIngresado, contrasenaIngresada)) {
