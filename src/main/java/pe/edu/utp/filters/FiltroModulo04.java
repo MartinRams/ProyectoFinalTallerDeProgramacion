@@ -23,13 +23,13 @@ public class FiltroModulo04 {
         LimpiezaConsola.limpiarConsola();
 
         // Filtramos los sectores y departamentos
-        for (String[] dato : datos) {
-            if (!SECTORES.contains(dato[2])) {
-                SECTORES.add(dato[2]);
+        for (String[] fila : datos) {
+            if (!SECTORES.contains(fila[2])) {
+                SECTORES.add(fila[2]);
             }
 
-            if (!DEPARTAMENTOS.contains(dato[3])) {
-                DEPARTAMENTOS.add(dato[3]);
+            if (!DEPARTAMENTOS.contains(fila[3])) {
+                DEPARTAMENTOS.add(fila[3]);
             }
         }
         Collections.sort(DEPARTAMENTOS);
@@ -73,9 +73,8 @@ public class FiltroModulo04 {
                     opcion = entrada.nextInt();
                     entrada.nextLine();
 
-                    if (opcion < 0 || opcion > SECTORES.size()) {
-                        System.out.print("\033[H\033[2J");
-                        System.out.flush();
+                    if (opcion < 0 || opcion > 12) {
+                        LimpiezaConsola.limpiarConsola();
                             
                         System.out.println("Opción inválida.");
 
@@ -97,9 +96,9 @@ public class FiltroModulo04 {
                             subTotal = 0;
                             departamento = DEPARTAMENTOS.get(i);
 
-                            for (Object[] dato : datos) {
-                                if (mes.equals(dato[1]) && sector.equals(dato[2]) && departamento.equals(dato[3])) {
-                                    subTotal += Double.parseDouble(dato[5].toString());
+                            for (Object[] fila : datos) {
+                                if (mes.equals(fila[1]) && sector.equals(fila[2]) && departamento.equals(fila[3])) {
+                                    subTotal += Double.parseDouble(fila[5].toString());
                                 }
                             }
                             

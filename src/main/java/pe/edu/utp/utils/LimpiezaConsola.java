@@ -8,6 +8,6 @@ public class LimpiezaConsola {
         // Limpiamos la consola (en caso de no ser ejecutado en un IDE)
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        
+
     }
 }

@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.Scanner;
 
+import pe.edu.utp.utils.LimpiezaConsola;
+
 public class ValidacionUsuario {
     // Declaramos variables
     private final Map<String, String> USUARIOS;
@@ -62,16 +64,13 @@ public class ValidacionUsuario {
                 contrasenaIngresada = new String(consola.readPassword("Contraseña: "));
             }
 
-
             if (validarUsuario(usuarioIngresado, contrasenaIngresada)) {
                 break;
 
             } else {
                 intentos--;
                 usuarioIngresado = "";
-                System.out.println("\n");
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
+                LimpiezaConsola.limpiarConsola();
                 System.out.println("Usuario o contraseña incorrectos.");
                 System.out.println("Intentos restantes " + intentos + "." + (intentos != 0 ? "\n" : ""));
 

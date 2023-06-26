@@ -27,9 +27,7 @@ public class Modulo02 {
 
                     // Se imprime el reporte
                     if (opcion == 1) {
-                        System.out.println("\n");
-                        System.out.print("\033[H\033[2J");
-                        System.out.flush();
+                        LimpiezaConsola.limpiarConsola();
 
                         // System.out.println(reporte);
                         // if (!reporte.equals("")) {
