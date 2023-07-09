@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import pe.edu.utp.csv.Datos;
-import pe.edu.utp.utils.ImpresionSectores;
 import pe.edu.utp.utils.LimpiezaConsola;
 
 /**
@@ -35,7 +34,7 @@ public class FiltroModulo03 {
             do {
                 // Mostramos los sectores
                 LimpiezaConsola.limpiarConsola();
-                ImpresionSectores.imprimirSectores();
+                Datos.imprimirSectores();
                 System.out.println(" [0] TERMINAR SELECCIÓN");
                 System.out.println(" [-1] VOLVER");
                 System.out.print(mensaje);
@@ -80,11 +79,11 @@ public class FiltroModulo03 {
 
             if (haSeleccionado && !sectoresIntroducidos.isEmpty()) { // Validamos si ha introducido sectores
                 do {
-                    // Mostramos los meses
+                    // Mostramos los sectores seleccionados
                     LimpiezaConsola.limpiarConsola();
                     System.out.print("SECTORES SELECCIONADOS: [");
 
-                    for (int i = 0; i < sectoresIntroducidos.size(); i++) { // Mostramos los sectores seleccionados
+                    for (int i = 0; i < sectoresIntroducidos.size(); i++) {
                         System.out.print(
                                 sectoresIntroducidos.get(i) + (i < (sectoresIntroducidos.size() - 1) ? ", " : "]"));
                     }
@@ -99,7 +98,7 @@ public class FiltroModulo03 {
                         System.out.println();
                     }
 
-                    
+                    // Mostramos los meses
                     System.out.println("MESES [1 - 12]");
                     System.out.println(" [0] TERMINAR SELECCIÓN");
                     System.out.println(" [-1] VOLVER");

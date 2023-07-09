@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import pe.edu.utp.utils.LimpiezaConsola;
+
 /**
  * Esta clase hace la lectura del archivo CSV y devuelve los datos en una lista.
  * @author Martin Alexander Ramos Yampufe
@@ -54,5 +56,17 @@ public class Datos {
      */
     public static List<String> getDepartamentos() {
         return DEPARTAMENTOS;
+    }
+
+    /**
+     * Este método imprime los sectores.
+     */
+    public static void imprimirSectores() {
+        LimpiezaConsola.limpiarConsola();
+        
+        System.out.println("SECTORES:");
+            for (int i = 0; i < Datos.getSectores().size(); i++) { // Se recorre la lista de sectores
+                System.out.printf(" [%d] %s\n", (i + 1), Datos.getSectores().get(i)); // Se imprime el sector con un número asignado
+            }
     }
 }

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import pe.edu.utp.csv.Datos;
-import pe.edu.utp.utils.ImpresionSectores;
 import pe.edu.utp.utils.LimpiezaConsola;
 
 /**
@@ -30,7 +29,7 @@ public class FiltroModulo04 {
 
         // Mostrar los sectores
         do {
-            ImpresionSectores.imprimirSectores();
+            Datos.imprimirSectores();
             System.out.println(" [0] VOLVER");
 
             System.out.print("\n Seleccione un sector: ");
