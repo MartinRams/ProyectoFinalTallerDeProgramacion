@@ -1,18 +1,27 @@
 package pe.edu.utp.ui;
 
-import java.util.List;
 import java.util.Scanner;
 
-import pe.edu.utp.csv.LecturaCsv;
+import pe.edu.utp.csv.Datos;
 import pe.edu.utp.utils.LimpiezaConsola;
 
+/**
+ * Esta clase se encargará de mostrar el menú principal del programa y de llamar a los filtros correspondientes.
+ * @author Angelo del Piero Barboza Sanchez
+ * @autor Junior Aron Delgado Flores
+ * @autor Martin Alexander Ramos Yampufe
+ */
 public class MenuPrincipal {
+    /**
+     * Despliega el menú principal del programa.
+     * @param entrada Scanner para leer datos desde el teclado.
+     */
     public static void despliegueMenuPrincipal(Scanner entrada) {
         // Declaramos variables
         String error = "";
         int opcion;
 
-        List<String[]> datos = LecturaCsv.obtenerDatos();
+        Datos.cargarDatos();
 
         // Desplegamos el menú principal
         do {
@@ -39,22 +48,22 @@ public class MenuPrincipal {
             switch (opcion) {
                 case 1:
                     error = "";
-                    Modulo01.despliegueModulo01(entrada, datos);
+                    Modulo01.despliegueModulo01(entrada);
                     break;
 
                 case 2:
                     error = "";
-                    Modulo02.despliegueModulo02(entrada, datos);
+                    Modulo02.despliegueModulo02(entrada);
                     break;
 
                 case 3:
                     error = "";
-                    Modulo03.despliegueModulo03(entrada, datos);
+                    Modulo03.despliegueModulo03(entrada);
                     break;
 
                 case 4:
                     error = "";
-                    Modulo04.despliegueModulo04(entrada, datos);
+                    Modulo04.despliegueModulo04(entrada);
                     break;
 
                 case 0:

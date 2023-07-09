@@ -1,12 +1,20 @@
 package pe.edu.utp.ui;
 
-import java.util.List;
 import java.util.Scanner;
 
 import pe.edu.utp.utils.LimpiezaConsola;
 
+/**
+ * Esta clase se encargará de mostrar la cantidad de dinero girado a cada departamento dada una lista de departamentos.
+ * @autor Angelo del Piero Barboza Sanchez
+ */
 public class Modulo02 {
-    public static void despliegueModulo02(Scanner entrada, List<String[]> datos) {
+    /**
+     * Despliega el menú del módulo 02.
+     * @param entrada Scanner para leer datos desde el teclado.
+     * @param datos Lista de datos.
+     */
+    public static void despliegueModulo02(Scanner entrada) {
         // Declaramos variables
         String error = "";
         int opcion;

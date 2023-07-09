@@ -8,7 +8,7 @@ import pe.edu.utp.ui.MenuPrincipal;
 
 public class Main {
     public static void main(String[] args) {
-        // Declaramos variables.
+        // Declaramos e inicializamos variables.
         String usuario = "";
 
         // Iniciamos programa
@@ -21,13 +21,13 @@ public class Main {
                 MenuPrincipal.despliegueMenuPrincipal(entrada);
 
             } else {
-                System.out.println("Usuario inválido.");
+                System.out.println("Usuario inválido."); 
 
             }
 
         } catch (Exception e) {
-            if (Objects.equals(usuario, "")) {
-                usuario = "Desconocido";
+            if (Objects.equals(usuario, "")) { // En caso no se haya ingresado usuario.
+                usuario = "Desconocido"; // Se registra como usuario desconocido.
             }
 
             // Registramos error
@@ -36,7 +36,7 @@ public class Main {
             IngresoAuditorio.logError(usuario, tipoError, mensajeError);
 
         } finally {
-            System.out.print("\n¡Hasta pronto!\n");
+            System.out.print("\n¡Hasta pronto!\n"); // Despedida.
 
         }
     }

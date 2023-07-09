@@ -8,6 +8,10 @@ import java.util.Scanner;
 
 import pe.edu.utp.utils.LimpiezaConsola;
 
+/**
+ * Esta clase se encarga de hacer las vadilaciones de los usuarios.
+ * @author Martin Alexander Ramos Yampufe
+ */
 public class ValidacionUsuario {
     // Declaramos variables
     private final Map<String, String> USUARIOS;
@@ -19,7 +23,10 @@ public class ValidacionUsuario {
         cargarUsuarios();
     }
 
-    // Leeremos el archivo que contiene los usuarios
+    /**
+     * Cargamos a memoria los usuarios y contraseñas.
+     * @throws Exception Si no se puede leer el archivo.
+     */
     private void cargarUsuarios() {
         try {
             BufferedReader lector = new BufferedReader(new FileReader(RUTA_USUARIOS));
@@ -39,15 +46,24 @@ public class ValidacionUsuario {
         }
     }
 
-    // Validamos el usuario
+    /**
+     * Validamos el usuario y contraseña.
+     * @param nombre Nombre ingresado.
+     * @param contrasena Contraseña ingresada.
+     * @return True si el usuario y contraseña son correctos, false en caso contrario.
+     */
     public boolean validarUsuario(String nombre, String contrasena) {
         if (USUARIOS.containsKey(nombre)) {
-            return USUARIOS.get(nombre).equals(contrasena);
+            return USUARIOS.get(nombre).equals(contrasena); // Validamos la contraseña
         }
         return false;
     }
 
-    // Pedimos el usuario
+    /**
+     * Pedimos el usuario y contraseña.
+     * @param entrada
+     * @return El nombre de usuario ingresado.
+     */
     public String pedirUsuario(Scanner entrada) {
         Console consola = System.console();
         String usuarioIngresado, contrasenaIngresada;
@@ -57,6 +73,7 @@ public class ValidacionUsuario {
             System.out.print("Usuario: ");
             usuarioIngresado = entrada.nextLine().toLowerCase();
 
+            // En caso de usar una consola, la contraseña no se mostrará en pantalla
             if (consola == null) {
                 System.out.print("Contraseña: ");
                 contrasenaIngresada = entrada.nextLine();
@@ -69,7 +86,7 @@ public class ValidacionUsuario {
             if (validarUsuario(usuarioIngresado, contrasenaIngresada)) {
                 break;
 
-            } else {
+            } else { // En caso de que el usuario o contraseña sean incorrectos se decrementa la cantidad de intentos
                 intentos--;
                 usuarioIngresado = "";
                 LimpiezaConsola.limpiarConsola();

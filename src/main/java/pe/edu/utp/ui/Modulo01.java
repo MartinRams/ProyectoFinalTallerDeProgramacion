@@ -1,12 +1,20 @@
 package pe.edu.utp.ui;
 
-import java.util.List;
 import java.util.Scanner;
 
 import pe.edu.utp.utils.LimpiezaConsola;
 
+/**
+ * Esta clase se encarga de mostrar las opciones del módulo 01 y de llamar a las clases correspondientes para su ejecución.
+ * @autor Junior Aron Delgado Flores
+ */
 public class Modulo01 {
-    public static void despliegueModulo01(Scanner entrada, List<String[]> datos) {
+    /**
+     * Despliega las opciones del módulo 01.
+     * @param entrada Scanner para leer datos desde el teclado.
+     * @param datos Lista de datos obtenidos desde el archivo CSV.
+     */
+    public static void despliegueModulo01(Scanner entrada) {
         // Declaramos variables
         String error = "";
         int opcion;
