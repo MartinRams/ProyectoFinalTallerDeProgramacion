@@ -30,18 +30,21 @@ public class Modulo03 {
                 case 1, 2 -> {
                     String reporte = FiltroModulo03.reporte(entrada);
 
-                    // Se imprime el reporte
-                    if (opcion == 1) {
-                        LimpiezaConsola.limpiarConsola();
-                        System.out.println(reporte);
-                        
-                        if (!reporte.equals("")) {
-                            System.out.print("Presione cualquier ENTER para continuar... ");
-                            entrada.nextLine();
+                    LimpiezaConsola.limpiarConsola();
+
+                    if (!reporte.equals("")) {
+                        if (opcion == 1) { // Se imprime el reporte
+                            System.out.println(reporte);                
+
+                        } else { // Se exporta el informe a un archivo plano
+                            ExportacionDatos.exportarReporte("Modulo03", reporte); // Se exporta el reporte
+                            System.out.println("El reporte se ha exportado con éxito a la siguiente ruta:");
+                            System.out.println(ExportacionDatos.getRutaArchivo() + "\n");
+
                         }
 
-                    } else { // Se exporta el informe a un archivo plano
-                        ExportacionDatos.exportarReporte("Modulo03", reporte); // Se exporta el reporte
+                        System.out.print("Presione cualquier ENTER para continuar... "); // Se espera a que el usuario presione ENTER para continuar
+                        entrada.nextLine();
                     }
                 }
                 case 0 -> error = "";

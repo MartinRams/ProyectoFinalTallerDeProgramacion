@@ -113,7 +113,7 @@ public class FiltroModulo03 {
 
                     } else {
                         if (mesesIntroducidos.contains(mesIntroducido)) { // Validamos si ya ha seleccionado el mes
-                            mensaje = "Ya ha seleccionado este mesIntroducido.\n";
+                            mensaje = "Ya ha seleccionado este mes.\n";
 
                         } else if (mesIntroducido == 0) { // Validamos si ha terminado de seleccionar meses
                             haConcluido = true;
