@@ -112,3 +112,9 @@ Usuario: u22214724
 Tipo de error: java.lang.IllegalArgumentException 
 Mensaje de error: Self-suppression not permitted
 
+jul. 09, 2023 5:36:04 P. M. pe.edu.utp.logging.IngresoAuditorio logError
+WARNING: Fecha: Sun Jul 09 17:36:04 PET 2023 
+Usuario: u22204466 
+Tipo de error: java.util.NoSuchElementException 
+Mensaje de error: null
+
