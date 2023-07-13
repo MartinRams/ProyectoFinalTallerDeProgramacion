@@ -118,3 +118,15 @@ Usuario: u22204466
 Tipo de error: java.util.NoSuchElementException 
 Mensaje de error: null
 
+jul. 13, 2023 4:22:34 P. M. pe.edu.utp.logging.IngresoAuditorio logError
+WARNING: Fecha: Thu Jul 13 16:22:34 PET 2023 
+Usuario: u22243528 
+Tipo de error: java.util.UnknownFormatConversionException 
+Mensaje de error: Conversion = '1'
+
+jul. 13, 2023 4:30:14 P. M. pe.edu.utp.logging.IngresoAuditorio logError
+WARNING: Fecha: Thu Jul 13 16:30:14 PET 2023 
+Usuario: u22243528 
+Tipo de error: java.util.UnknownFormatConversionException 
+Mensaje de error: Conversion = '1'
+
